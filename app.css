@@ -1,0 +1,207 @@
+#intro {
+    background: url('img/film_noir_wallpaper_028.jpg') no-repeat center center;
+    background-size: cover;
+    font-family: 'Roboto Slab', serif;
+    height: 100vh;
+}
+
+img {
+    filter: grayscale(100%);
+}
+
+.jumbotron {
+    color: white;
+    background-color: darkgray;
+    width: 30%;
+    border-radius: 5px;
+    margin: 100px auto;
+    font-weight: 72px;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.carousel {
+    background-color: transparent;
+    color: white;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.carousel img {
+    width: 300px;
+    height: 300px;
+}
+
+ #intro h2 {
+     margin: auto auto;
+ }
+
+ /* scene of crime */
+ #scene-of-crime {
+    
+    background: url('img/film-noir-typography-blur-and-burn-tools.png');
+    background-size: cover;
+    background-color: darkgray;
+    font-family: 'Roboto Slab', serif;
+    height: 100vh;
+}
+
+.discussion-container {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.investigator .card {
+    border: 3px solid forestgreen;
+    background-color: green;  
+}
+
+.client .card {
+    border: 3px solid red;
+    background-color: darkred;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    font-size: 48px;
+    color: whitesmoke;
+}
+
+#scene-of-crime .row {
+    margin-top: 2rem;
+    position: absolute;
+    background-color: darkgray;
+    width: 80%;
+    border: 5px solid lightgray;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+/* 3 of a crime */
+
+#three-of-crime {
+    background: url('img/film-noir-typography-blur-and-burn-tools.png');
+    background-size: cover;
+    background-color: darkgray;
+    font-family: 'Roboto Slab', serif;
+    height: 100vh;
+    color: white;
+}
+
+#three-of-crime .row {
+    margin: 50px;
+}
+
+#js-card-stack {
+    overflow: scroll;
+}
+#js-card-stack img {
+    width: 100%;
+}
+
+#js-card-stack .row {
+    margin-top: 3rem;
+}
+
+#js-card-stack strong {
+    font-size: 72px;
+    color: darkorange;
+}
+
+.suspect-count {
+    width: 40%;
+}
+
+
+#three-of-crime img {
+    pointer-events: none;
+    height: 200px;
+    width: 200px;
+}
+
+/* CAPTURE */
+#capture {
+    background-color: darkgray;
+}
+#capture .background {
+    background: url('img/buildings.png') no-repeat center;
+    background-size: contain;
+    height: 100vh;
+    z-index: 2;
+    position: relative;
+    pointer-events: none;
+    /*opacity: .2;*/
+}
+
+
+.room {
+    width: 200px;
+    height: 200px;
+}
+
+.rooms {
+    top: 90px;
+    position: absolute;
+    /*border: 3px solid red;*/
+    width: 100%;
+}
+
+
+
+.room img {
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+}
+
+.room[data-row="0"] {
+    top: 150px;
+}
+
+.room[data-row="1"] {
+    top: 400px;
+}
+
+.room[data-col="0"] {
+    left: 50px;
+}
+
+.room[data-col="1"] {
+    left: 150px;
+}
+
+.room[data-col="2"] {
+    left: 250px;
+}
+
+.room[data-col="3"] {
+    left: 350px;
+}
+
+.room[data-col="4"] {
+    left: 450px;
+}
+
+.room[data-col="5"] {
+    left: 550px;
+}
+
+.room[data-row="0"][data-col="0"] {
+    /*border: 2px solid red;*/
+}
+
+.room[data-row="1"][data-col="1"] {
+    /*border: 2px solid green;*/
+}
