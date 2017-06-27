@@ -96,7 +96,7 @@ p {
     background-size: cover;
     background-color: darkgray;
     font-family: 'Roboto Slab', serif;
-    height: 100vh;
+    height: 800px;
     color: white;
 }
 
@@ -104,8 +104,12 @@ p {
     margin: 50px;
 }
 
+#three-of-crime .card {
+    margin: 20px;
+}
+
 #js-card-stack {
-    overflow: scroll;
+    overflow-y: auto;
 }
 #js-card-stack img {
     width: 100%;

@@ -24,8 +24,20 @@ $(document).ready(function () {
 
     hideAllStates();
 
-    switchState('intro');
 
+    // DEBUG
+    investigatorID = ids.slice().pop();
+
+    suspects = ids.slice(1,4);
+
+    console.log(investigatorID, suspects);
+
+    switchState('three-of-crime');
+
+
+
+
+    // FUNCTIONS ///////////////
     function hideAllStates() {
         Object.keys(states).forEach(function (s) {
             $('#' + s).hide(0);
@@ -61,39 +73,11 @@ $(document).ready(function () {
                     $('.carousel').append('<div><img data-id="' + id + '" src="img/' + id + '.jpeg" alt=""></div>');
                 });
                 $('.carousel').slick({
-                    centerMode: true,
-                    centerPadding: '60px',
+                    infinite: true,
                     slidesToShow: 3,
-                    responsive: [
-                        {
-                            breakpoint: 960,
-                            settings: {
-                                arrows: true,
-                                centerMode: true,
-                                centerPadding: '40px',
-                                slidesToShow: 3
-                            }
-                        },
-                        {
-                            breakpoint: 768,
-                            settings: {
-                                arrows: false,
-                                centerMode: true,
-                                centerPadding: '40px',
-                                slidesToShow: 3
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                arrows: false,
-                                centerMode: true,
-                                centerPadding: '40px',
-                                slidesToShow: 1
-                            }
-                        }
-                    ]
+                    slidesToScroll: 3
                 });
+
 
                 $('.carousel div').on('click', function (evt) {
 
@@ -298,16 +282,16 @@ $(document).ready(function () {
                 for (var i = 0; i < characters.length; i++) {
                     for (j = i + 1; j < characters.length; j++) {
                         for (var k = j + 1; k < characters.length; k++) {
-                            
+
 
                             if (suspects.indexOf(characters[i]) > -1 &&
                                 suspects.indexOf(characters[j]) > -1 &&
                                 suspects.indexOf(characters[k]) > -1) {
 
-                                    // don't create card with all 3 suspects
+                                // don't create card with all 3 suspects
 
                             } else {
-                                
+
                                 cards.push(_.shuffle([characters[i], characters[j], characters[k]]));
                             }
                         }
