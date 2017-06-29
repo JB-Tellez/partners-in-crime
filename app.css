@@ -128,7 +128,7 @@ p {
 
 #js-card-stack {
     overflow-y: auto;
-    height: 50%;
+    height: 80%;
 }
 #js-card-stack img {
     width: 100%;
