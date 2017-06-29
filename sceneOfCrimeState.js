@@ -14,17 +14,18 @@
 
                 var discussionLines = getDiscussionLines();
 
-                var tl = new TimelineMax({ delay: .5, onComplete: onComplete });
+                var tl = new TimelineMax({ delay: .5 });
 
                 discussionLines.forEach(addLine);
 
-                $('#js-btn-restart').on('click', restart);
+                $('#js-btn-done').on('click', done);
 
                 $('#js-btn-back').on('click', gotoPreviousLabel);
 
-                $('#js-btn-skip').on('click', skip);
+                $('#js-btn-next').on('click', gotoNextLabel);
 
-                function onComplete() {
+                function done() {
+                    tl.progress(1, false);
                     model.complete();
                 }
 
@@ -32,31 +33,40 @@
                     tl.restart();
                 }
 
-                function skip() {
-                    tl.progress(1, false);
-                }
-
                 function gotoPreviousLabel() {
 
                     var labelNames = tl.getLabelsArray().map(function (label) { return label.name });
 
-                    console.log('labels', labelNames);
-
                     var currentLabel = tl.currentLabel();
 
-                    console.log('current label', currentLabel);
-
                     var currentLabelIndex = labelNames.indexOf(currentLabel);
-
-                    console.log('current label index', currentLabelIndex);
 
                     if (currentLabelIndex > 0) {
 
                         var previousLabel = labelNames[currentLabelIndex - 1];
 
-                        console.log('previou label', previousLabel);
-
                         tl.seek(previousLabel);
+                    }
+
+                }
+
+                function gotoNextLabel() {
+
+                    var labelNames = tl.getLabelsArray().map(function (label) { return label.name });
+
+                    var currentLabel = tl.currentLabel();
+
+                    var currentLabelIndex = labelNames.indexOf(currentLabel);
+
+                    if (currentLabelIndex < labelNames.length - 1) {
+
+                        var nextLabel = labelNames[currentLabelIndex + 1];
+
+                        tl.seek(nextLabel);
+
+                    } else {
+
+                        done();
                     }
 
                 }
@@ -72,12 +82,7 @@
                         :
                         $('<div class="row discussion client"><div class="col-sm-9"><p>' + line.text + '</p></div><div class="col-sm-3"><div class="card"><img src="' + line.img + '" alt=""></div></div></div>')
 
-                    node.css('top', index * 100 + 'px');
-
-
-                    if (!line.isInvestigator) {
-                        node.css('left', '100px');
-                    }
+                    node.css('top', index * 80 + 'px');
 
                     $('.discussion-container').append(node);
 
