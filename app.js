@@ -23,6 +23,7 @@ $(document).ready(function () {
         "brad",
         "camille",
         "carmen",
+        "christiana",
         "denis",
         "djaf",
         "jorge",
