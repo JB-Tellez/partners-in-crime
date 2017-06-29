@@ -111,7 +111,12 @@
                             img: "img/hackers/" + investigator.img,
                         },
                         {
-                            text: "Extremely! We have a sign on the door. What part of \"completely\" don't they understand???",
+                            text: "Extremely! We even have a sign on the door!",
+                            isInvestigator: false,
+                            img: "img/hackers/tair.jpeg",
+                        },
+                        {
+                            text: "What part of \"completely\" don't they understand???",
                             isInvestigator: false,
                             img: "img/hackers/hector.jpeg",
                         },
@@ -121,9 +126,9 @@
                             img: "img/hackers/" + investigator.img,
                         },
                         {
-                            text: "There are 3 students we have our eye on but...",
+                            text: "We know the exact 3 jerks that did it but...",
                             isInvestigator: false,
-                            img: "img/hackers/tair.jpeg",
+                            img: "img/hackers/michiel.jpeg",
                         },
                         {
                             text: "... we are prohibited by E.U. law from telling you who they are :(",
