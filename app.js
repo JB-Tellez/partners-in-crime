@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var DEBUG = false;
+    var DEBUG = true;
 
     var model = {
         investigatorID: '',
@@ -89,8 +89,8 @@ $(document).ready(function () {
 
     hideAllStates();
 
-    document.getElementById('audio').play();
-    document.getElementById('audio').currentTime = 15;
+    document.getElementById('background-audio').play();
+    document.getElementById('background-audio').currentTime = 15;
 
     if (DEBUG) {
 

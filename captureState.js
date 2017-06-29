@@ -32,7 +32,14 @@
 
                         var suspectIndex = model.suspects.indexOf(targetID);
 
+                        
+
                         if (suspectIndex > -1) {
+
+                            
+                            $('#fx-audio').attr('src', 'audio/cartoon118.mp3');
+                         
+                            $('#fx-audio')[0].play();
 
                             captured.push(targetID);
 
@@ -52,6 +59,10 @@
                             TweenMax.to(target, .25, { repeat: -1, yoyo: true, scale: 1.2 });
 
                         } else {
+
+                            $('#fx-audio').attr('src', 'audio/cartoon009.mp3');
+                         
+                            $('#fx-audio')[0].play();
 
                             console.log("WRONG!!! Start over");
 
