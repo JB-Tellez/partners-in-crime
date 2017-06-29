@@ -96,7 +96,7 @@
                             img: "img/" + investigator.img,
                         },
                         {
-                            text: "Somebody used door to programmer pen and didn't close it completely!",
+                            text: "3 naughty students used door to programmer room and didn't close it completely!",
                             isInvestigator: false,
                             img: "img/matias_lorenzo.jpeg",
                         },
