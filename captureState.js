@@ -24,6 +24,8 @@
 
                     var target = $(evt.target);
 
+                    target.css('opacity', 1);
+
                     var targetID = target.attr('id');
 
                     if (target.is('img')) {
@@ -31,8 +33,6 @@
                         var suspectIndex = model.suspects.indexOf(targetID);
 
                         if (suspectIndex > -1) {
-
-                            console.log('got one suspect!!!');
 
                             captured.push(targetID);
 

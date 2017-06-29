@@ -155,26 +155,30 @@ p {
     background-color: darkgray;
 }
 #capture .background {
-    background: url('img/buildings.png') no-repeat center;
-    background-size: contain;
+    background: url('img/buildings.png') no-repeat center center;
+    background-size: 100vw 100vh;
     height: 100vh;
     z-index: 2;
     position: relative;
     pointer-events: none;
-    opacity: .5;
+    /*opacity: .5;*/
 }
 
 
 .room {
-    width: 200px;
-    height: 200px;
+    width: 12%;
+
+    height: 24vh;
+    position: absolute;
+    /*border: 3px solid red;*/
 }
 
 .rooms {
-    top: 90px;
+    top: 20%;
     position: absolute;
     /*border: 3px solid red;*/
     width: 100%;
+    left: 0;
 }
 
 
@@ -186,35 +190,35 @@ p {
 }
 
 .room[data-row="0"] {
-    top: 120px;
+    top: 0rem;
 }
 
 .room[data-row="1"] {
-    top: 270px;
+    top: 50vh;
 }
 
 .room[data-col="0"] {
-    left: 50px;
+    left: 2%;
 }
 
 .room[data-col="1"] {
-    left: 100px;
+    left: 20%;
 }
 
 .room[data-col="2"] {
-    left: 250px;
+    left: 37%;
 }
 
 .room[data-col="3"] {
-    left: 350px;
+    left: 52%;
 }
 
 .room[data-col="4"] {
-    left: 450px;
+    left:70%;
 }
 
 .room[data-col="5"] {
-    left: 550px;
+    left: 87%;
 }
 
 
