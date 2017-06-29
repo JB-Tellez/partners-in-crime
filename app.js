@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var DEBUG = true;
+    var DEBUG = false;
 
     var model = {
         investigatorID: '',
