@@ -28,19 +28,20 @@ function IntroState(model) {
 
                 var investigator = $(evt.target).clone();
 
-                model.investigatorID = investigator.attr('data-id');
+                investigator.css('height','300px');
 
                 $('.content').append(investigator);
 
-                TweenMax.set(investigator, { scale: .2 });
+                model.investigatorID = investigator.attr('data-id');
 
-                TweenMax.to($('.carousel'), 1, { opacity: 0 });
+                var tl = new TimelineMax();
+               
+                tl.to($('.carousel'), 1, { opacity: 0, marginTop: "-300px"});
 
-                TweenMax.to(investigator, 1, {
-                    scale: 1.2, onComplete: function () {
-                        model.complete();
-                    }
-                });
+                tl.call(model.complete, null, "+1");
+            
+
+                
 
                 // randomly select the suspects (but strip out investigator)
                 model.suspects = _.shuffle(model.ids.filter(function (id) { return id !== model.investigatorID; })).slice(0, 3);
