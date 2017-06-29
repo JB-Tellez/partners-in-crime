@@ -145,6 +145,8 @@ p {
 
 /* CAPTURE */
 #capture {
+    background: url('img/film-noir-typography-blur-and-burn-tools.png');
+    background-size: cover;
     background-color: darkgray;
 }
 #capture .background {
