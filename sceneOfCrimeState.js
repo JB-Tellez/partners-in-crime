@@ -123,7 +123,7 @@
                         {
                             text: "There are 3 students we have our eye on but...",
                             isInvestigator: false,
-                            img: "img/hackers/matias.jpeg",
+                            img: "img/hackers/tair.jpeg",
                         },
                         {
                             text: "... we are prohibited by E.U. law from telling you who they are :(",
