@@ -34,6 +34,13 @@ function IntroState(model) {
 
                 model.investigatorID = investigator.attr('data-id');
 
+                // now limit the ids to 7 else game takes too long
+                model.ids.splice(model.ids.indexOf(model.investigatorID), 1);
+
+                model.ids = model.ids.slice(0,7);
+
+                console.log(model.ids);
+
                 var tl = new TimelineMax();
                
                 tl.to($('.carousel'), 1, { opacity: 0, marginTop: "-300px"});
