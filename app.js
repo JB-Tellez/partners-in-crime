@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    var DEBUG = true;
+
     var state;
     var investigatorID;
     var suspects = [];
@@ -7,7 +9,8 @@ $(document).ready(function () {
         'intro': createIntroState(),
         'scene-of-crime': createSceneOfCrimeState(),
         'three-of-crime': createThreeOfCrimeState(),
-        'capture': createCaptureState()
+        'capture': createCaptureState(),
+        'success': createSuccessState(),
     };
 
     var ids = [
@@ -24,15 +27,25 @@ $(document).ready(function () {
 
     hideAllStates();
 
+    document.getElementById('audio').play();
+    document.getElementById('audio').currentTime = 15;
 
-    // DEBUG
-    investigatorID = ids.slice().pop();
 
-    suspects = ids.slice(1,4);
+    if (DEBUG) {
+        
+        investigatorID = ids.slice().pop();
 
-    console.log(investigatorID, suspects);
+        suspects = ids.slice(1, 4);
 
-    switchState('three-of-crime');
+        console.log(investigatorID, suspects);
+
+        switchState('success');
+
+    } else {
+
+        switchState('intro');
+    }
+
 
 
 
@@ -72,6 +85,8 @@ $(document).ready(function () {
                 ids.forEach(function (id) {
                     $('.carousel').append('<div><img data-id="' + id + '" src="img/' + id + '.jpeg" alt=""></div>');
                 });
+
+
                 $('.carousel').slick({
                     infinite: true,
                     slidesToShow: 3,
@@ -139,7 +154,7 @@ $(document).ready(function () {
 
                 var discussionLines = getDiscussionLines();
 
-                var tl = new TimelineMax({ delay: 1, onComplete: onComplete });
+                var tl = new TimelineMax({ delay: .5, onComplete: onComplete });
 
                 discussionLines.forEach(addLine);
 
@@ -208,7 +223,7 @@ $(document).ready(function () {
 
                     TweenMax.set(node, { opacity: 0 });
 
-                    var offset = line.offset || 2;
+                    var offset = line.offset || 4;
 
                     tl.to(node, 1, { opacity: 1 }).addLabel('label-' + index).to(node, .25, { opacity: .2 }, "+=" + (offset));
                 }
@@ -260,7 +275,7 @@ $(document).ready(function () {
         }
     }
 
-    // 3 of a crime state
+    // THREE OF CRIME STATE
     function createThreeOfCrimeState() {
 
         return {
@@ -274,8 +289,6 @@ $(document).ready(function () {
                 var characters = ids.filter(function (id) {
                     return id !== investigatorID;
                 });
-
-                console.log('characters', characters);
 
                 var cards = [];
                 // need to generate cards with every 3 character combo
@@ -300,7 +313,19 @@ $(document).ready(function () {
 
                 cards = _.shuffle(cards);
 
-                $('#js-flip-card-btn').on('click', function (evt) {
+                $('#js-flip-card-btn').on('click', showLineUp);
+
+                $('#js-capture-btn').on('click', function (evt) {
+                    switchState('capture');
+                });
+
+                $('#js-card-stack').on('click', function(evt) {
+                    $(evt.target).toggleClass('suspect');
+                });
+
+                showLineUp();
+
+                function showLineUp() {
 
                     if (cards.length > 0) {
 
@@ -316,18 +341,13 @@ $(document).ready(function () {
 
                         TweenMax.to('img', 1, { scale: 1.1 });
 
+                        $('#js-card-stack').css({ scrollTop: 0 });
+
                     } else {
 
                         alert('out of chances!!!')
                     }
-
-                });
-
-
-
-                $('#js-capture-btn').on('click', function (evt) {
-                    switchState('capture');
-                });
+                }
 
                 function getMatchingSuspectCount(card) {
 
@@ -405,6 +425,9 @@ $(document).ready(function () {
                             if (captured.length === 3) {
 
                                 clearInterval(gameLoop);
+
+                                switchState('success');
+
                             } else {
 
                                 initWorkingIDs();
@@ -412,7 +435,7 @@ $(document).ready(function () {
 
                             TweenMax.killTweensOf(target);
 
-                            TweenMax.to(target, .25, { repeat: 100, yoyo: true, scale: 1.2 });
+                            TweenMax.to(target, .25, { repeat: -1, yoyo: true, scale: 1.2 });
 
                         } else {
 
@@ -478,7 +501,42 @@ $(document).ready(function () {
                 }, 1000);
             },
 
-            destroy: function () { }
+            destroy: function () {
+                $('#' + this.name).hide();
+                TweenMax.killAll();
+            }
+        }
+
+    }
+
+    // SUCCESS STATE
+    function createSuccessState() {
+
+        return {
+
+            name: 'success',
+
+            start: function () {
+
+                $('#' + this.name).show();
+
+                $('#suspect-1 img').attr('src', 'img/' + suspects[0] + '.jpeg');
+                $('#suspect-2 img').attr('src', 'img/' + suspects[1] + '.jpeg');
+                $('#suspect-3 img').attr('src', 'img/' + suspects[2] + '.jpeg');
+
+                var tl = new TimelineMax({ delay: 0 });
+
+                tl.from($('.bars'), 1.5, {opacity: 0});
+                tl.from($('#suspect-1'), .5, {scale:0, rotation:-720}, "-=1.5");
+                tl.from($('#suspect-2'), .5, {scale:0, rotation:-720}, "-=1.25");
+                tl.from($('#suspect-3'), .5, {scale:0, rotation:-720}, "-=1.00");
+                
+
+            },
+            destroy: function () {
+                $('#' + this.name).hide();
+             }
         }
     }
+
 });

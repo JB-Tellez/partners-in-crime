@@ -16,11 +16,21 @@
 <body>
 
 
+    <!-- AUDIO -->
+    <audio id='audio' src="audio/noir_background.mp3">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
     <!-- intro -->
     <div id="intro" class="container-fluid">
+
+
         <section class="content">
+
             <div class="jumbotron">
-                <h2>Pick Investigator</h2>
+                <h1>IronHack Mystery</h1>
+                <h2>Episode: 1</h2>
+                <h2>The case of the open door</h2>
+                <h3>Pick Investigator</h3>
             </div>
             <div class="carousel">
             </div>
@@ -45,12 +55,15 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h2>3 naughty students at IronHack left door open. Flip cards to get clues.</h2>
+                <h2>3 naughty students at IronHack left door open.</h2>
+                <h3>We can show you a "line up" of 3 students and tell you how many of them did the crime.</h3>
+                <h3>It is possible using your investigative logic to find all 3 suspects.</h3>
+                <h3>Once you know all 3 suspects then click capture button</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <button id="js-flip-card-btn" class="btn btn-default">Flip Card</button>
+                <button id="js-flip-card-btn" class="btn btn-default">Next Line Up</button>
                 <button id="js-capture-btn" class="btn btn-default">Capture</button>
             </div>
         </div>
@@ -84,6 +97,17 @@
         </div>
     </div>
 
+    <!-- SUCCESS STATE -->
+    <div id="success" class="container-fluid">
+        <h1>You captured the Partners in Crime!</h1>
+        <div class="row captured">
+            <div id="suspect-1" class="col-md-4 suspect"><img src="" alt=""></div>
+            <div id="suspect-2" class="col-md-4 suspect"><img src="" alt=""></div>
+            <div id="suspect-3" class="col-md-4 suspect"><img src="" alt=""></div>
+        </div>
+        <div class="bars"></div>
+    </div>
+
 
 
     <!-- scripts -->
@@ -93,7 +117,6 @@
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="app.js"></script>
-    <script src="introState.js"></script>
 </body>
 
 </html>
