@@ -67,9 +67,9 @@ function ThreeOfCrimeState(model) {
                     var $row = $('<div class="row"></div>');
                     $('#js-card-stack').prepend($row);
 
-                    $row.append('<div class="col-md-3 card"><img src="./img/' + card[0] + '.jpeg"></div>');
-                    $row.append('<div class="col-md-3 card"><img src="./img/' + card[1] + '.jpeg"></div>');
-                    $row.append('<div class="col-md-3 card"><img src="./img/' + card[2] + '.jpeg"></div>');
+                    $row.append('<div class="col-md-3 card"><img src="./img/hackers/' + card[0] + '.jpeg"></div>');
+                    $row.append('<div class="col-md-3 card"><img src="./img/hackers/' + card[1] + '.jpeg"></div>');
+                    $row.append('<div class="col-md-3 card"><img src="./img/hackers/' + card[2] + '.jpeg"></div>');
                     $row.append('<div class="col-md-3 suspect-count"><p>There are <strong>' + getMatchingSuspectCount(card) + '</strong> suspects in the lineup</p></div>');
 
                     TweenMax.to('img', 1, { scale: 1.1 });

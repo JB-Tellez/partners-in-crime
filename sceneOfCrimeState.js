@@ -98,37 +98,37 @@
                         {
                             text: "What is the nature of the crime?",
                             isInvestigator: true,
-                            img: "img/" + investigator.img,
+                            img: "img/hackers/" + investigator.img,
                         },
                         {
                             text: "3 naughty students used door to programmer room and didn't close it completely!",
                             isInvestigator: false,
-                            img: "img/matias_lorenzo.jpeg",
+                            img: "img/hackers/matias.jpeg",
                         },
                         {
                             text: "Is that serious?",
                             isInvestigator: true,
-                            img: "img/" + investigator.img,
+                            img: "img/hackers/" + investigator.img,
                         },
                         {
-                            text: "Extremely! We have a sign on the door. What part of \"entirely\" don't they understand???",
+                            text: "Extremely! We have a sign on the door. What part of \"completely\" don't they understand???",
                             isInvestigator: false,
-                            img: "img/hector_leon.jpeg",
+                            img: "img/hackers/hector.jpeg",
                         },
                         {
                             text: "Do you have any suspects?",
                             isInvestigator: true,
-                            img: "img/" + investigator.img,
+                            img: "img/hackers/" + investigator.img,
                         },
                         {
                             text: "There are 3 students we have our eye on but...",
                             isInvestigator: false,
-                            img: "img/matias_lorenzo.jpeg",
+                            img: "img/hackers/matias.jpeg",
                         },
                         {
                             text: "... we are prohibited by E.U. law from telling you who they are :(",
                             isInvestigator: false,
-                            img: "img/marc_llopis.jpeg",
+                            img: "img/hackers/marc.jpeg",
                         },
                     ];
                 }

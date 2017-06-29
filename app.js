@@ -13,13 +13,29 @@ $(document).ready(function () {
     };
 
     model.ids = [
-        "albert_serradell",
-        "alex_buchan",
-        "alex_fontanellas",
-        "alex_rodriguez",
-        "andrea_bravo",
-        "jb_tellez",
-        "micaela"
+        "albert",
+        "alex_b",
+        "alex_f",
+        "alex_r",
+        "andrea",
+        "ark",
+        "arnau",
+        "brad",
+        "camille",
+        "carmen",
+        "denis",
+        "djaf",
+        "jorge",
+        "jb",
+        "julius",
+        "laura",
+        "luis",
+        "micaela",
+        "miguel",
+        "petra",
+        "rachel",
+        "sara",
+        "stephanos"
     ];
 
     model.ids = _.shuffle(model.ids);
@@ -78,11 +94,11 @@ $(document).ready(function () {
 
         model.investigatorID = model.ids.slice().pop();
 
-        model.suspects = ids.slice(1, 4);
+        model.suspects = model.ids.slice(1, 4);
 
         console.log(model.investigatorID, model.suspects);
 
-        switchState('success');
+        switchState('capture');
 
     } else {
 

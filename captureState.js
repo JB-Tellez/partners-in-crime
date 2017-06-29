@@ -97,7 +97,7 @@
                             initWorkingIDs();
                         }
 
-                        var img = $('<img id="' + id + '" src="img/' + id + '.jpeg">');
+                        var img = $('<img id="' + id + '" src="img/hackers/' + id + '.jpeg">');
 
                         cell.append(img);
 

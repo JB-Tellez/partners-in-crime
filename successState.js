@@ -8,9 +8,9 @@
 
                 $('#' + this.name).show();
 
-                $('#suspect-1 img').attr('src', 'img/' + model.suspects[0] + '.jpeg');
-                $('#suspect-2 img').attr('src', 'img/' + model.suspects[1] + '.jpeg');
-                $('#suspect-3 img').attr('src', 'img/' + model.suspects[2] + '.jpeg');
+                $('#suspect-1 img').attr('src', 'img/hackers/' + model.suspects[0] + '.jpeg');
+                $('#suspect-2 img').attr('src', 'img/hackers/' + model.suspects[1] + '.jpeg');
+                $('#suspect-3 img').attr('src', 'img/hackers/' + model.suspects[2] + '.jpeg');
 
                 var tl = new TimelineMax({ delay: 0 });
 

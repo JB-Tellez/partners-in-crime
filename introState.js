@@ -9,7 +9,7 @@ function IntroState(model) {
             $('#intro').show(0);
 
             model.ids.forEach(function (id) {
-                $('.carousel').append('<div><img data-id="' + id + '" src="img/' + id + '.jpeg" alt=""></div>');
+                $('.carousel').append('<div><img data-id="' + id + '" src="img/hackers/' + id + '.jpeg" alt=""></div>');
             });
 
 

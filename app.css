@@ -167,7 +167,7 @@ p {
     z-index: 2;
     position: relative;
     pointer-events: none;
-    /*opacity: .2;*/
+    opacity: .2;
 }
 
 
@@ -192,11 +192,11 @@ p {
 }
 
 .room[data-row="0"] {
-    top: 150px;
+    top: 120px;
 }
 
 .room[data-row="1"] {
-    top: 400px;
+    top: 270px;
 }
 
 .room[data-col="0"] {
@@ -204,7 +204,7 @@ p {
 }
 
 .room[data-col="1"] {
-    left: 150px;
+    left: 100px;
 }
 
 .room[data-col="2"] {
