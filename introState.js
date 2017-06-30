@@ -31,6 +31,8 @@ function IntroState(model) {
 
                 $('.content').append(investigator);
 
+                // TODO: move model manipulation to game container
+                
                 model.investigatorID = investigator.attr('data-id');
 
                 // now limit the ids to 7 else game takes too long
