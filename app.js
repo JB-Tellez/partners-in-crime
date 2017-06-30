@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $('#btn-cheat').click(function(){
+        alert('Cheater! ' + model.suspects);
+    });
     var DEBUG = false;
 
     var model = {
