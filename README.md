@@ -6,5 +6,5 @@ Something bad is going down at Pamplona 68
 
 Use your investigative powers to solve the crime
 
-[Slides](https://slides.com/jonathyntellez/partners-in-crime/live#/)
+[Slides](http://slides.com/jonathyntellez/partners-in-crime#/)
 [Demo](https://jb-tellez.github.io/partners-in-crime/)
