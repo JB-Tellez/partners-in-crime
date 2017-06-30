@@ -32,9 +32,7 @@
 
                         var suspectIndex = model.suspects.indexOf(targetID);
 
-                        
-
-                        if (suspectIndex > -1) {
+                        if (suspectIndex > -1 && captured.indexOf(targetID) === -1) {
 
                             
                             $('#fx-audio').attr('src', 'audio/cartoon118.mp3');
@@ -63,8 +61,6 @@
                             $('#fx-audio').attr('src', 'audio/cartoon009.mp3');
                          
                             $('#fx-audio')[0].play();
-
-                            console.log("WRONG!!! Start over");
 
                             captured.forEach(function (suspect) {
                                 TweenMax.killTweensOf($('#' + suspect));
