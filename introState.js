@@ -6,13 +6,14 @@ function IntroState(model) {
 
         start: function () {
 
-            $('#intro').show(0);
+            $('#' + this.name).show(0);
 
+            // add images to carousel
             model.ids.forEach(function (id) {
                 $('.carousel').append('<div><img data-id="' + id + '" src="img/hackers/' + id + '.jpeg" alt=""></div>');
             });
 
-
+            // configure carousel
             $('.carousel').slick({
                 infinite: true,
                 slidesToShow: 3,
@@ -21,8 +22,6 @@ function IntroState(model) {
 
 
             $('.carousel div').on('click', function (evt) {
-
-                console.log('carousel click', evt.target);
 
                 $('.carousel div').off();
 
@@ -47,13 +46,8 @@ function IntroState(model) {
 
                 tl.call(model.complete, null, "+1");
             
-
-                
-
                 // randomly select the suspects (but strip out investigator)
                 model.suspects = _.shuffle(model.ids.filter(function (id) { return id !== model.investigatorID; })).slice(0, 3);
-
-                console.info('suspects', model.suspects);
 
             });
 
