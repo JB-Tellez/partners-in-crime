@@ -8,7 +8,7 @@
 
             start: function () {
 
-                $('#scene-of-crime').show();
+                $('#' + this.name).show();
 
                 var investigator = { name: model.investigatorID, img: model.investigatorID + ".jpeg" };
 
