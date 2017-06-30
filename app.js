@@ -32,6 +32,7 @@ $(document).ready(function () {
         "julius",
         "laura",
         "luis",
+        "maria",
         "micaela",
         "miguel",
         "petra",

@@ -72,7 +72,7 @@ function ThreeOfCrimeState(model) {
                     $row.append('<div class="col-md-3 card"><img src="./img/hackers/' + card[2] + '.jpeg"></div>');
                     $row.append('<div class="col-md-3 suspect-count"><p><strong>' + getMatchingSuspectCount(card) + '</strong> suspects in this lineup</p></div>');
 
-                    TweenMax.to('img', 1, { scale: 1.1 });
+                    // TweenMax.to('img', 1, { scale: 1.1 });
 
                     $('#js-card-stack').css({ scrollTop: 0 });
 
