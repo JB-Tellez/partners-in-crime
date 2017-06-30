@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#btn-cheat').click(function(){
         alert('Cheater! ' + model.suspects);
     });
-    var DEBUG = false;
+    var DEBUG = true;
 
     var model = {
         investigatorID: '',
@@ -104,7 +104,7 @@ $(document).ready(function () {
 
         console.log(model.investigatorID, model.suspects);
 
-        switchState('capture');
+        switchState('success');
 
     } else {
 
