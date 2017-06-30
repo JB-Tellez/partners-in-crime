@@ -1,20 +1,22 @@
 $(document).ready(function () {
 
-    $('#btn-cheat').click(function(){
-        alert('Cheater! ' + model.suspects);
-    });
     var DEBUG = false;
 
+    // cheat button (hidden in top right corner of screen)
+    $('#btn-cheat').click(function () {
+        alert('Cheater! ' + model.suspects);
+    });
+
+    // model of game
     var model = {
         investigatorID: '',
         ids: [],
         suspects: [],
         state: undefined,
-        complete: function() {
-            switchState(getNextState());
-        }
+        complete: stateComplete
     };
 
+    // list of student ids
     model.ids = [
         "albert",
         "alex_b",
@@ -44,9 +46,10 @@ $(document).ready(function () {
         "stephanos"
     ];
 
+    // randomize
     model.ids = _.shuffle(model.ids);
 
-    // DANGER: store functions versus instantiating now???
+    // QUESTION: store functions versus instantiating now???
     var states = {
         'intro': new IntroState(model),
         'scene-of-crime': new SceneOfCrimeState(model),
@@ -55,7 +58,28 @@ $(document).ready(function () {
         'success': new SuccessState(model),
     };
 
-   getNextState = function () {
+    hideAllStates();
+
+    playBackgroundAudio();
+
+    if (DEBUG) {
+
+        model.investigatorID = model.ids.slice().pop();
+
+        model.suspects = model.ids.slice(1, 4);
+
+        console.log(model.investigatorID, model.suspects);
+
+        switchState('success');
+
+    } else {
+
+        switchState('intro');
+    }
+
+    // FUNCTIONS ///////////////
+
+    getNextState = function () {
 
         var nextState;
 
@@ -90,28 +114,6 @@ $(document).ready(function () {
         return nextState;
     }
 
-
-    hideAllStates();
-
-    document.getElementById('background-audio').play();
-    document.getElementById('background-audio').currentTime = 15;
-
-    if (DEBUG) {
-
-        model.investigatorID = model.ids.slice().pop();
-
-        model.suspects = model.ids.slice(1, 4);
-
-        console.log(model.investigatorID, model.suspects);
-
-        switchState('success');
-
-    } else {
-
-        switchState('intro');
-    }
-
-    // FUNCTIONS ///////////////
     function hideAllStates() {
         Object.keys(states).forEach(function (s) {
             $('#' + s).hide(0);
@@ -127,5 +129,14 @@ $(document).ready(function () {
         model.state = states[next];
 
         model.state.start();
+    }
+
+    function playBackgroundAudio() {
+        document.getElementById('background-audio').play();
+        document.getElementById('background-audio').currentTime = 15;
+    }
+
+    function stateComplete() {
+        switchState(getNextState())
     }
 });
